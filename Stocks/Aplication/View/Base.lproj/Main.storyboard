@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,9 +46,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ctx-GX-WBe">
-                                <rect key="frame" x="0.0" y="593" width="414" height="269"/>
-                            </pickerView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-N0-NpU">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
@@ -78,7 +76,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ctx-GX-WBe">
+                                <rect key="frame" x="20" y="593" width="374" height="269"/>
+                            </pickerView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rnU-Ux-Mm6" secondAttribute="trailing" constant="40" id="0DC-Xr-i3X"/>
@@ -88,21 +90,21 @@
                             <constraint firstItem="iRA-jD-lJ6" firstAttribute="top" secondItem="peS-v9-j5e" secondAttribute="bottom" constant="10" id="AsJ-ob-Q5P"/>
                             <constraint firstItem="jCa-mw-PBl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="BL6-Ao-dAC"/>
                             <constraint firstItem="uTa-ky-UUG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="HBw-oo-LeU"/>
+                            <constraint firstItem="Ctx-GX-WBe" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="KSA-wV-KnG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ctx-GX-WBe" secondAttribute="bottom" id="LxJ-rr-7P4"/>
                             <constraint firstItem="jCa-mw-PBl" firstAttribute="top" secondItem="uwc-b9-Og3" secondAttribute="bottom" constant="10" id="M7C-hZ-0T3"/>
                             <constraint firstItem="Wuf-T2-wrA" firstAttribute="top" secondItem="XXY-nY-d6g" secondAttribute="bottom" constant="10" id="O6D-CA-r6Z"/>
                             <constraint firstItem="iRA-jD-lJ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="VSQ-KR-KQt"/>
+                            <constraint firstItem="Ctx-GX-WBe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="VTg-Vw-iAS"/>
                             <constraint firstItem="Ctx-GX-WBe" firstAttribute="top" secondItem="Wuf-T2-wrA" secondAttribute="bottom" constant="10" id="VzS-8Q-nnh"/>
                             <constraint firstItem="Wuf-T2-wrA" firstAttribute="leading" secondItem="58L-sp-jHE" secondAttribute="trailing" constant="10" id="Y2l-un-mYq"/>
                             <constraint firstItem="peS-v9-j5e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Ya8-8l-ZDC"/>
                             <constraint firstItem="uTa-ky-UUG" firstAttribute="top" relation="lessThanOrEqual" secondItem="iRA-jD-lJ6" secondAttribute="bottom" constant="20" id="YpH-dq-aq0"/>
                             <constraint firstItem="zMZ-N0-NpU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aP1-3s-P2N"/>
                             <constraint firstItem="XXY-nY-d6g" firstAttribute="top" secondItem="rnU-Ux-Mm6" secondAttribute="bottom" constant="10" id="bec-W2-hTf"/>
-                            <constraint firstAttribute="trailing" secondItem="Ctx-GX-WBe" secondAttribute="trailing" id="d2a-b3-7fb"/>
                             <constraint firstItem="Ctx-GX-WBe" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="dHC-kB-qYz"/>
                             <constraint firstItem="uwc-b9-Og3" firstAttribute="top" secondItem="uTa-ky-UUG" secondAttribute="bottom" constant="10" id="dII-wj-P4U"/>
                             <constraint firstItem="Ctx-GX-WBe" firstAttribute="top" secondItem="jCa-mw-PBl" secondAttribute="bottom" constant="10" id="fZH-hc-IFI"/>
-                            <constraint firstItem="Ctx-GX-WBe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iru-mf-pwv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iRA-jD-lJ6" secondAttribute="trailing" constant="40" id="lqx-Hq-yTB"/>
                             <constraint firstItem="rnU-Ux-Mm6" firstAttribute="top" relation="lessThanOrEqual" secondItem="iRA-jD-lJ6" secondAttribute="bottom" constant="20" id="qpb-4j-pt8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XXY-nY-d6g" secondAttribute="trailing" constant="40" id="rKS-te-lrK"/>
@@ -111,7 +113,6 @@
                             <constraint firstItem="uwc-b9-Og3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="yGG-6H-tOD"/>
                             <constraint firstItem="peS-v9-j5e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="zwh-MB-yAb"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="zMZ-N0-NpU" id="3lq-NT-9Ny"/>

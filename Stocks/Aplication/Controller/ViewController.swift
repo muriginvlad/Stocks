@@ -11,12 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     
     
-]
     private lazy var companies =  [
-                    "Apple": "AAPL"
-                ]
+        "Apple": "AAPL"
+    ]
     
-
+    
     @IBOutlet var companyNameLabel: UILabel!
     @IBOutlet var companyPickerView: UIPickerView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
@@ -27,19 +26,19 @@ class ViewController: UIViewController {
     @IBOutlet var mainScreenView: UIView!
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         companiesRequest()
-    
+        
         companyNameLabel.text = "Tinkoff"
         
         companyPickerView.dataSource = self
         companyPickerView.delegate = self
         
         activityIndicator.hidesWhenStopped = true
-      
+        
         requestQuoteUpdate()
         
         
@@ -52,12 +51,12 @@ class ViewController: UIViewController {
         priceLabel.text = "-"
         priceChangeLabel.text = "-"
         priceChangeLabel.textColor = .black
-
+        
         
         let selectedRow = companyPickerView.selectedRow(inComponent: 0)
         let selectedSymbol = Array(companies.values)[selectedRow]
         requestQuote(for: selectedSymbol)
- 
+        
         
         
     }
@@ -71,29 +70,29 @@ class ViewController: UIViewController {
         
         let dataTask = URLSession.shared.dataTask(with: url) {(data,respose, error) in
             if let data = data,
-                (respose as? HTTPURLResponse)?.statusCode == 200,
-                error == nil {
+               (respose as? HTTPURLResponse)?.statusCode == 200,
+               error == nil {
                 do {
                     let jsoneObject = try JSONSerialization.jsonObject(with: data)
                     guard
                         let json = jsoneObject as? NSArray
-                        else {return print("Invalid JSON") }
+                    else {return print("Invalid JSON") }
                     
                     for index in 0..<json.count {
                         let item = json[index] as? NSDictionary
                         let  symbol = item!["symbol"] as! String
                         let  name = item!["name"] as! String
-                     
+                        
                         companiesList.updateValue(symbol, forKey: name)
                         
                     }
                     self.companies = companiesList
-                     
+                    
                     DispatchQueue.main.async {
-                    self.companyPickerView.reloadAllComponents()
+                        self.companyPickerView.reloadAllComponents()
                         self.requestQuoteUpdate()
                     }
-
+                    
                 } catch {
                     print("JSON parsing erroe")
                 }
@@ -104,6 +103,9 @@ class ViewController: UIViewController {
         dataTask.resume()
     }
     
+    
+ 
+    
     private func requestQuote(for symbol: String) {
         let token = "pk_7f54c2b074b34ed399519c24d6f39560"
         
@@ -113,8 +115,8 @@ class ViewController: UIViewController {
         
         let dataTask = URLSession.shared.dataTask(with: url) {(data,respose, error) in
             if let data = data,
-                (respose as? HTTPURLResponse)?.statusCode == 200,
-                error == nil {
+               (respose as? HTTPURLResponse)?.statusCode == 200,
+               error == nil {
                 self.parseQuote(from: data)
                 DispatchQueue.main.async {
                     self.companyIconImage.image = self.imagUrlToImage(symbol: symbol)
@@ -141,7 +143,7 @@ class ViewController: UIViewController {
                 let companySymbol = json["symbol"] as? String,
                 let price = json["latestPrice"] as? Double,
                 let priceChange = json["change"] as? Double
-                else {return print("Invalid JSON") }
+            else {return print("Invalid JSON") }
             
             DispatchQueue.main.async { [weak self] in
                 self?.displayStockInfo(companyName: companyName,
